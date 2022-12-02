@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="720.0" style="-fx-background-color: #fafafa;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.сontrollers.Controller">
+
+    <AnchorPane prefHeight="360.0" prefWidth="720.0">
+        <children>
+            <MenuBar fx:id="menuBarItem" layoutY="-1.0" prefHeight="25.0" prefWidth="720.0">
+                <menus>
+                    <Menu fx:id="menuFileItem" mnemonicParsing="false" text="Файл">
+                        <items>
+                            <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" text="Завершить работу " />
+                        </items>
+                    </Menu>
+                    <Menu fx:id="menuRefItem" mnemonicParsing="false" text="Справка">
+                        <items>
+                            <MenuItem fx:id="menuAboutItem" mnemonicParsing="false" text="О программе" />
+                        </items>
+                    </Menu>
+               <Menu mnemonicParsing="false" text="Настройки">
+                 <items>
+                   <MenuItem fx:id="makeSecretKey" mnemonicParsing="false" text="Задать секретный ключ" />
+                 </items>
+               </Menu>
+                </menus>
+            </MenuBar>
+          <TextField fx:id="textField" layoutX="14.0" layoutY="77.0" prefHeight="77.0" prefWidth="550.0" promptText="Введите текст" style="-fx-background-color: #fafafa; -fx-border-radius: 5; -fx-border-color: silver;">
+              <font>
+                  <Font size="17.0" />
+              </font>
+          </TextField>
+          <Button fx:id="makeHashButton" layoutX="14.0" layoutY="307.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="151.0" style="-fx-background-color: #9966CC;" text="Хешировать" textFill="WHITE">
+              <font>
+                  <Font size="17.0" />
+              </font>
+          </Button>
+          <Button fx:id="compareHashButton" layoutX="285.0" layoutY="307.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="151.0" style="-fx-background-color: #9966CC;" text="Сравнить хеши" textFill="WHITE">
+              <font>
+                  <Font size="17.0" />
+              </font>
+          </Button>
+         <CheckBox fx:id="isSecretKey" layoutX="572.0" layoutY="42.0" mnemonicParsing="false" onAction="#change" prefHeight="18.0" prefWidth="139.0" text="Есть секретный ключ" />
+         <Button fx:id="enterkeyButton" disable="true" layoutX="572.0" layoutY="74.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="139.0" style="-fx-background-color: #9966CC;" text="Ввести ключ" textFill="WHITE">
+            <font>
+               <Font size="17.0" />
+            </font>
+         </Button>
+         <Button fx:id="chooseFileButton" disable="true" layoutX="14.0" layoutY="36.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="116.0" style="-fx-background-color: #9966CC;" text="Выбрать файл" textFill="WHITE">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Button>
+         <TextField fx:id="hashField1" layoutX="14.0" layoutY="170.0" prefHeight="43.0" prefWidth="550.0" promptText="Хеш" style="-fx-background-color: #fafafa; -fx-border-radius: 5; -fx-border-color: silver;">
+            <font>
+               <Font size="17.0" />
+            </font>
+         </TextField>
+            <Label fx:id="chooseFileLabel" layoutX="151.0" layoutY="36.0" prefHeight="30.0" prefWidth="151.0" text="Выберите файл" textFill="#ff0000d6" visible="false">
+                <font>
+                    <Font name="Verdana" size="18.0" />
+                </font>
+            </Label>
+         <Button fx:id="saveHashButton" layoutX="560.0" layoutY="307.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="151.0" style="-fx-background-color: #9966CC;" text="Сохранить хеш" textFill="WHITE">
+            <font>
+               <Font size="17.0" />
+            </font>
+         </Button>
+         <Label fx:id="nicehashLabel" layoutX="291.0" layoutY="259.0" prefHeight="32.0" prefWidth="139.0" text="Хеши совпали" textFill="#00ff04a3" visible="false">
+            <font>
+               <Font name="Verdana" size="18.0" />
+            </font>
+         </Label>
+         <Label fx:id="badhashLabel" layoutX="275.0" layoutY="259.0" prefHeight="32.0" prefWidth="172.0" text="Хеши не совпали" textFill="#ff0000a3" visible="false">
+            <font>
+               <Font name="Verdana" size="18.0" />
+            </font>
+         </Label>
+         <Label fx:id="saveHashLabel" layoutX="566.0" layoutY="258.0" prefHeight="33.0" prefWidth="139.0" text="Хеш сохранен" textAlignment="CENTER" textFill="#00ff04d6" visible="false">
+            <font>
+               <Font name="Verdana" size="18.0" />
+            </font>
+         </Label>
+         <CheckBox fx:id="fileBox" layoutX="387.0" layoutY="28.0" mnemonicParsing="false" onAction="#onFileChange" text="Файл" />
+         <CheckBox fx:id="messageBox" layoutX="387.0" layoutY="52.0" mnemonicParsing="false" onAction="#onMessageChange" selected="true" text="Вводимое сообщение" />
+        </children></AnchorPane>
+
+</AnchorPane>
